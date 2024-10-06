@@ -267,29 +267,6 @@ class Discriminator(nn.Module):
 
 
 
-"""
-Cette fonction calcule le Gradient penalty pour renforcer les gradients du discriminateur et stabiliser l'apprentissage.
-Nous avons décidé de ne pas l'appliquer
-"""
-def gradient_penalty(D, real_data, fake_data, real_labels):
-    alpha = torch.rand(real_data.size(0), 1, 1, 1, 1).to(real_data.device)  # For 3D data
-    interpolates = alpha * real_data + ((1 - alpha) * fake_data)
-    interpolates.requires_grad_(True)
-    disc_interpolates = D(interpolates, real_labels)
-    gradients = torch.autograd.grad(
-        outputs=disc_interpolates,
-        inputs=interpolates,
-        grad_outputs=torch.ones(disc_interpolates.size()).to(real_data.device),
-        create_graph=True,
-        retain_graph=True,
-        only_inputs=True
-    )[0]
-    gradients = gradients.view(gradients.size(0), -1)
-    gradient_pen = ((gradients.norm(2, dim=1) - 1) ** 2).mean()
-    return gradient_pen
-
-
-
 
 
 """
@@ -309,7 +286,7 @@ def load_data():
         "gesture016": 15, "gesture017": 16, "gesture018": 17, "gesture019": 18, "gesture020": 19,
         "gesture021": 20, "gesture022": 21, "gesture023": 22, "gesture024": 23
     }
-    paths = glob("D:\\finalgan\\try\\*\\*\\*")
+    paths = glob("D:\\finalgan\\db\\*\\*\\*")
     max_frames = 32
     print("Total directories found:", len(paths))
     for path in paths:
@@ -361,8 +338,26 @@ def save_frames(video_frames, epoch, label_name, subject_id, videos_folder):
 
 
 
-
-
+"""
+Cette fonction calcule le Gradient penalty pour renforcer les gradients du discriminateur et stabiliser l'apprentissage.
+Nous avons décidé de ne pas l'appliquer
+"""
+def gradient_penalty(D, real_data, fake_data, real_labels):
+    alpha = torch.rand(real_data.size(0), 1, 1, 1, 1).to(real_data.device)  # For 3D data
+    interpolates = alpha * real_data + ((1 - alpha) * fake_data)
+    interpolates.requires_grad_(True)
+    disc_interpolates = D(interpolates, real_labels)
+    gradients = torch.autograd.grad(
+        outputs=disc_interpolates,
+        inputs=interpolates,
+        grad_outputs=torch.ones(disc_interpolates.size()).to(real_data.device),
+        create_graph=True,
+        retain_graph=True,
+        only_inputs=True
+    )[0]
+    gradients = gradients.view(gradients.size(0), -1)
+    gradient_pen = ((gradients.norm(2, dim=1) - 1) ** 2).mean()
+    return gradient_pen
 
 """
 Cette fonction déforme une image (frame) en utilisant un champ de flux optique. Le flux optique fournit des 
