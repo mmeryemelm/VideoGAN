@@ -4,6 +4,7 @@ Ce projet fait partie de notre travail de fin d'année 2024 et est une implémen
 
 ## Table des matières
 - [Description du générateur](#description-du-générateur)
+- [Résultats expérimentaux](#résultats-expérimentaux)
 - [Installation](#installation)
 - [Configuration de la base de données](#configuration-de-la-base-de-données)
 - [Utilisation](#utilisation)
@@ -19,6 +20,17 @@ Le flux d'arrière-plan, quant à lui, s'occupe des éléments moins dynamiques,
 Ces deux flux sont ensuite combinés pour produire une vidéo finale qui offre à la fois des mouvements réalistes et une cohérence visuelle globale.
 
 ![Figure du Générateur](https://github.com/mmeryemelm/videoGAN/raw/main/GAN/generateur.jpg)
+
+
+## Résultats expérimentaux
+
+Ces images sont générées par notre modèle GAN, développé spécifiquement pour la reproduction de mouvements humains. Le modèle a été évalué sur un ensemble de données de test non vues durant l'entraînement, assurant ainsi sa capacité à généraliser. Chaque image illustre un geste distinct, étiqueté pour faciliter l'identification et l'analyse ultérieures. 
+
+
+![Résultats expérimentaux](https://github.com/mmeryemelm/videoGAN/blob/main/GAN/GANSGIF.gif)
+
+
+
 
 
 ## Installation
