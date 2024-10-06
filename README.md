@@ -1,13 +1,24 @@
-# Synthèse de Mouvements avec GAN
+# Synthèse de mouvements avec GAN
 
 Ce projet fait partie de notre travail de fin d'année 2024 et est une implémentation de notre recherche sur la synthèse de mouvements. Il utilise Python, PyTorch et d'autres technologies pour modéliser et générer des séquences de mouvements complexes. Ce projet est destiné à fournir des outils et des bibliothèques utiles aux chercheurs et développeurs dans les domaines de l'animation et de la robotique.
 
-## Table des Matières
-
+## Table des matières
+- [Description du générateur](#description-du-générateur)
 - [Installation](#installation)
-- [Configuration de la Base de Données](#configuration-de-la-base-de-données)
+- [Configuration de la base de données](#configuration-de-la-base-de-données)
 - [Utilisation](#utilisation)
-- [Configuration Matérielle](#configuration-matérielle)
+- [Configuration matérielle](#configuration-matérielle)
+
+## Description du générateur
+Le générateur utilise un vecteur latent de caractéristiques, combiné avec un bruit gaussien, pour synthétiser des séquences vidéo. Ce réseau est conditionné par des étiquettes représentant différentes classes de mouvements, permettant ainsi de guider la génération vers des types de gestes spécifiques.
+
+L'architecture du générateur intègre deux flux distincts : un flux de premier plan et un flux d'arrière-plan.
+
+Le flux de premier plan est chargé de générer les détails dynamiques des mouvements humains, en se concentrant sur les zones de la vidéo où les actions sont les plus prononcées.
+Le flux d'arrière-plan, quant à lui, s'occupe des éléments moins dynamiques, garantissant la stabilité de la scène autour du sujet.
+Ces deux flux sont ensuite combinés pour produire une vidéo finale qui offre à la fois des mouvements réalistes et une cohérence visuelle globale.
+
+![Figure du Générateur](https://github.com/mmeryemelm/videoGAN/raw/main/GAN/generateur.jpg)
 
 
 ## Installation
@@ -20,9 +31,9 @@ cd nomDuProjet
 pip install -r requirements.txt
 ```
 
-## Configuration de la Base de Données
+## Configuration de la base de données
 
-### Étape 1: Téléchargement de la Base de Données Natops
+### Étape 1: Téléchargement de la base de données Natops
 
 1. **Clonage du dépôt GitHub :**
    - Ouvrez votre terminal.
@@ -46,7 +57,7 @@ D'accord, si vous prévoyez de placer les scripts dans le répertoire du projet 
 
 ---
 
-### Étape 2: Prétraitement des Vidéos
+### Étape 2: Prétraitement des vidéos
 
 Nous avons opté pour une approche modulaire dans le traitement des données vidéo. Chaque script dans notre pipeline traite une étape distincte de la préparation des données :
 
@@ -86,6 +97,6 @@ Cette commande spécifie les paramètres de configuration du modèle, notamment 
 
 2. Sinon vous pouvez simplement exécuter avec RUN.
 
-## Configuration Matérielle
+## Configuration matérielle
 
 Ce projet a été développé et testé sur une machine équipée d'un GPU avec 6 Go de mémoire et un processeur graphique ayant une capacité de 7.8, 13.8 TFLOPS.
