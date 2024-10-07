@@ -64,9 +64,6 @@ pip install -r requirements.txt
      ```bash
      ./download_natops.sh
      ```
-
-D'accord, si vous prévoyez de placer les scripts dans le répertoire du projet sur GitHub, c'est une bonne pratique pour garder le fichier `README.md` épuré et pour permettre aux utilisateurs de voir et d'exécuter les scripts directement. Voici comment vous pourriez référencer les scripts dans le `README.md` :
-
 ---
 
 ### Étape 2: Prétraitement des vidéos
