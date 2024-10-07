@@ -11,7 +11,7 @@ Ce projet fait partie de notre travail de fin d'année 2024 et est une implémen
 - [Configuration matérielle](#configuration-matérielle)
 
 ## Description du générateur
-Le générateur utilise un vecteur latent de caractéristiques, combiné avec un bruit gaussien, pour synthétiser des séquences vidéo. Ce réseau est conditionné par des étiquettes représentant différentes classes de mouvements, permettant ainsi de guider la génération vers des types de gestes spécifiques.
+Le générateur prend en entrée la première image d'une vidéo, qui montre un individu dans une posture neutre, et utilise un vecteur latent de caractéristiques qui ont été extraits de cette image I, combiné avec un bruit gaussien, pour synthétiser des séquences vidéo. Ce réseau est conditionné par des étiquettes représentant différentes classes de mouvements, permettant ainsi de guider la génération vers des types de gestes spécifiques.
 
 L'architecture du générateur intègre deux flux distincts : un flux de premier plan et un flux d'arrière-plan.
 
