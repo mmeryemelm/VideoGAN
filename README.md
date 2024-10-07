@@ -38,8 +38,8 @@ Ces images sont générées par notre modèle GAN, développé spécifiquement p
 Pour exécuter ce projet, installez les dépendances nécessaires en suivant ces étapes :
 
 ```bash
-git clone https://github.com/votreUsername/nomDuProjet
-cd nomDuProjet
+git clone https://github.com/mmeryemelm/VideoGAN.git
+cd VideoGAN
 pip install -r requirements.txt
 ```
 
