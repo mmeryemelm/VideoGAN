@@ -1,0 +1,8 @@
+torch==2.4.1+cu118
+torchvision==0.19.1+cu118
+torchaudio==2.4.1+cu118
+opencv-python==4.10.0.84
+numpy==1.26.4
+Pillow==10.4.0
+scikit-video==1.1.11
+scikit-image==0.17.2
