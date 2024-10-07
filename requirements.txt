@@ -6,3 +6,6 @@ numpy==1.26.4
 Pillow==10.4.0
 scikit-video==1.1.11
 scikit-image==0.17.2
+
+# System dependencies
+# FFmpeg (install separately from https://ffmpeg.org/download.html)
