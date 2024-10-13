@@ -27,7 +27,7 @@ Ces deux flux sont ensuite combinés pour produire une vidéo finale qui offre �
 Ces images sont générées par notre modèle GAN, développé spécifiquement pour la reproduction de mouvements humains. Le modèle a été évalué sur un ensemble de données de test non vues durant l'entraînement, assurant ainsi sa capacité à généraliser. Chaque image illustre un geste distinct, étiqueté pour faciliter l'identification et l'analyse ultérieures. 
 
 
-![Résultats expérimentaux](https://github.com/mmeryemelm/videoGAN/blob/main/GAN/GANSGIF.gif)
+![Résultats expérimentaux](https://github.com/mmeryemelm/VideoGAN/blob/main/Samples/GANSGIF.gif)
 
 
 
