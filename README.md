@@ -108,4 +108,4 @@ Cette commande spécifie les paramètres de configuration du modèle, notamment 
 
 ## Configuration matérielle
 
-Ce projet a été développé et testé sur une machine équipée d'un GPU avec 6 Go de mémoire et un processeur graphique ayant une capacité de 7.8, 13.8 TFLOPS.
+Ce projet a été développé et testé sur une machine équipée d'un GPU NVIDIA GeForce RTX 3060 avec 6 Go de mémoire. Le GPU supporte CUDA 12.5 et dispose d'une capacité de calcul de 7.8 TFLOPS.
