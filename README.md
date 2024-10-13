@@ -1,4 +1,4 @@
-# Synthèse de mouvements avec GAN
+# Synthèse de mouvements avec un modèle GAN
 
 Ce projet fait partie de notre travail de fin d'année 2024 et est une implémentation de notre recherche sur la synthèse de mouvements. Il utilise Python, PyTorch et d'autres technologies pour modéliser et générer des séquences de mouvements complexes. Ce projet est destiné à fournir des outils et des bibliothèques utiles aux chercheurs et développeurs dans les domaines de l'animation et de la robotique.
 
